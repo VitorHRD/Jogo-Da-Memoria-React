@@ -1,13 +1,262 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Sarala&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.icon{
+    background-color: black;
 }
+#title{
+   font-size:80px;
+   margin-bottom: 100px;
+   background-color: #101a2c00;
+}
+body{
+ font-family: Arial, Helvetica, sans-serif;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ 
+
+}
+.card{
+  width: 120px;
+  height: 120px;
+  position: relative;
+  transform-style:preserve-3d ;
+  transition: transform .5s;
+  
+}
+.card_back, .card_front{
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgba(75, 73, 73, 0.658);
+  backface-visibility: hidden;
+  
+}
+.card_back, .card_front:hover{
+    cursor: pointer;
+}
+.flip{
+    transform: rotateY(180deg);
+}
+.card_front{
+    background-color: black;
+  transform: rotateY(180deg);
+}
+.card_back{
+    color:#101c2c ;
+    background-color: #0ac7d1;
+    font-size: 30px;
+}
+.light{
+    --bg-dark-mode:#ffff;
+}
+
+#gameOver{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.87);
+    color: white;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    font-family: 'sarala',sans-serif;
+
+}
+#color{
+    background-color: rgba(0, 0, 0, 0);
+}
+#restart{
+    padding: 25px;
+    font-size: 25px;
+    background-color: yellow;
+    border:none;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+#restart:hover{
+    cursor: pointer;
+       padding: 35px;
+       border: white 1px solid;
+       transition: 0.2s;
+}
+#lvl{
+    padding: 25px;
+    font-size: 25px;
+    background-color: yellow;
+    border:none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+#lvl:hover{
+       cursor: pointer;
+       padding: 35px;
+       border: white 1px solid;
+       transition: 0.2s;
+}
+.dark{
+    background-color: #101c2c;
+}
+.light{
+    background-color: #ffff;
+}
+#gameBoard{
+    max-width: 1000px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr  / 1fr 1fr 1fr 1fr 1fr   ;
+    gap:20px;
+    
+    
+    
+}
+.toggle {
+    position: relative;
+    right:10vw;
+    height: 95% ;
+    padding: 0;
+    
+    
+}
+
+.toggle > input {
+    display: none;
+}
+
+.toggle > label {
+    position: relative;
+    display: block;
+    height: 28px;
+    width: 52px;
+    background-color: #f7f7f7;
+    border: 1.5px #a2e3e6 solid;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.toggle > label:after {
+    position: absolute;
+    left: 0.1px;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0.836);
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+    content: '';
+    transition: all 0.3s ease;
+}
+
+
+.toggle > input:checked ~ label:after {
+    left: 24px;
+}
+.toggle > input:disabled ~ label {
+    background-color: #d5d5d5;
+    pointer-events: none;
+}
+#emoji{
+    text-align: center;
+    font-size: 30px;
+}
+#emoji2{
+    display: none;
+    text-align: center;
+    font-size: 30px;
+}
+@media (max-width:1150px){
+   
+    .toggle{
+        left: 0;
+        height: 80%;
+        
+    }
+    }
+@media (max-width:1000px){
+#gameBoard{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    height: 50%;
+    width: 100%;
+   
+}
+.card{
+ width: 100px;
+ height: 100px; 
+}
+img{
+    max-width: 60px;
+}
+.toggle{
+    left: 0;
+    height: 80%;
+    
+}
+}
+@media (max-width:850px){
+    #gameBoard{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+        height: 100%;
+        width: 100%;
+       
+    }
+    .card{
+     width: 100px;
+     height: 100px; 
+    }
+    img{
+        max-width: 60px;
+    }
+    .toggle{
+        left: 0;
+        height: 80%;
+        
+    }
+    }
+@media (max-width:650px){
+    #gameBoard{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+        height: 100%;
+        width: 100%;
+       
+    }
+    .card{
+     width: 80px;
+     height: 85px; 
+    }
+    img{
+        max-width: 60px;
+    }
+    .toggle{
+        left: 0;
+        height: 80%;
+        
+    }
+    }
+ 
