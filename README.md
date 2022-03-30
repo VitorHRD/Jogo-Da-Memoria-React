@@ -12,9 +12,9 @@
 </h2
 
 <h1 align="center">Cartar virando e formando pares<h1>
-<img src="./images/gif1.gif"></img>
+<img src="./assets/images/gif1.gif"></img>
 <h1 align="center">Dark mode e light mode<h1>
-<img src="./images/gif2.gif"></img>
+<img src="./assets/images/gif2.gif"></img>
 <h1>🚀 Tecnologias</h1>
  
  <ul>
