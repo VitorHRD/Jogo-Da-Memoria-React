@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import GameBoard from './components/GameBoard'
 import GameOver from './components/GameOver'
 import game from './game/game'
+import DarkTheme from './components/DarkTheme'
+import GameProvider from './context/context'
 
 export default function MemoryGame() {
+
   const [gameOver, setgameOver] = useState(false)
   const [cards, setCards] = useState([])
 
   useEffect(() => {
     setCards(game.createCardsFromTechs())
+    
   }, [])
   function restart() {
     game.clearCards();
@@ -27,9 +31,12 @@ export default function MemoryGame() {
      setCards([...game.cards])
   }
   return (
-    <div>
+    <div className="backnone">
+      <GameProvider>
+      <DarkTheme></DarkTheme>
       <GameBoard handleFlip={handleFlip} cards={cards}></GameBoard>
       <GameOver show={gameOver} restart={restart}></GameOver>
+      </GameProvider>
     </div>
 
   )

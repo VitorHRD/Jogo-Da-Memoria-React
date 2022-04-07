@@ -4,8 +4,10 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    
-    
+
+}
+.backNone{
+    background: none;
 }
 
 .icon{
@@ -22,8 +24,6 @@ body{
  justify-content: center;
  align-items: center;
  height: 100vh;
- 
-
 }
 .card{
   width: 120px;
@@ -44,6 +44,7 @@ body{
   border-radius: 20px;
   box-shadow: 4px 4px 4px rgba(75, 73, 73, 0.658);
   backface-visibility: hidden;
+  font-size: 80px;
   
 }
 .card_back, .card_front:hover{
@@ -59,7 +60,8 @@ body{
 .card_back{
     color:#101c2c ;
     background-color: #0ac7d1;
-    font-size: 30px;
+    font-size: 46px;
+    font-weight: 600;
 }
 .light{
     --bg-dark-mode:#ffff;
@@ -125,8 +127,6 @@ body{
     grid-template: 1fr 1fr 1fr 1fr  / 1fr 1fr 1fr 1fr 1fr   ;
     gap:20px;
     
-    
-    
 }
 .toggle {
     position: relative;
@@ -176,11 +176,15 @@ body{
 #emoji{
     text-align: center;
     font-size: 30px;
+    width: 54px;
 }
 #emoji2{
-    display: none;
     text-align: center;
     font-size: 30px;
+    width: 54px;
+}
+.dnone{
+    display: none;
 }
 @media (max-width:1150px){
    
