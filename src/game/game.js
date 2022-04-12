@@ -135,19 +135,19 @@ let game = {
                 if (this.checkMarch()) {
                     this.clearCards();
                 }
-                    if (this.CheckGameOver()) {
-                        gameOverCallBack()
-                    }
-                    else {
-                        setTimeout(() => {
-                            //No match
-                            this.unflipCards();
-                            noMatchCallback()
-                        }, 1000);
-                    };
+                if (this.CheckGameOver()) {
+                    gameOverCallBack()
                 }
+                else {
+                    setTimeout(() => {
+                        //No match
+                        this.unflipCards();
+                        noMatchCallback()
+                    }, 1000);
+                };
             }
         }
     }
+}
 
 export default game
