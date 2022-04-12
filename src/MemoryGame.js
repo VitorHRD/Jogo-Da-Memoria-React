@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import GameBoard from './components/GameBoard'
 import GameOver from './components/GameOver'
 import game from './game/game'
@@ -12,7 +12,7 @@ export default function MemoryGame() {
 
   useEffect(() => {
     setCards(game.createCardsFromTechs())
-    
+
   }, [])
   function restart() {
     game.clearCards();
@@ -21,21 +21,21 @@ export default function MemoryGame() {
   }
   function handleFlip(card) {
 
-    game.flipCard(card.id , ()=>{
+    game.flipCard(card.id, () => {
       //GameOverCallback
       setgameOver(true)
-    },()=>{
+    }, () => {
       //NoMatchCallback
       setCards([...game.cards])
     })
-     setCards([...game.cards])
+    setCards([...game.cards])
   }
   return (
     <div className="backnone">
       <GameProvider>
-      <DarkTheme></DarkTheme>
-      <GameBoard handleFlip={handleFlip} cards={cards}></GameBoard>
-      <GameOver show={gameOver} restart={restart}></GameOver>
+        <DarkTheme></DarkTheme>
+        <GameBoard handleFlip={handleFlip} cards={cards}></GameBoard>
+        <GameOver show={gameOver} restart={restart}></GameOver>
       </GameProvider>
     </div>
 
