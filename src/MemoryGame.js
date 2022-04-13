@@ -19,6 +19,12 @@ export default function MemoryGame() {
     setCards(game.createCardsFromTechs())
     setgameOver(false)
   }
+  function levelUp(){
+    game.clearCards();
+    game.uplvl();
+    setCards(game.createCardsFromTechs())
+    setgameOver(false)
+  }
   function handleFlip(card) {
 
     game.flipCard(card.id, () => {
@@ -35,7 +41,7 @@ export default function MemoryGame() {
       <GameProvider>
         <DarkTheme></DarkTheme>
         <GameBoard handleFlip={handleFlip} cards={cards}></GameBoard>
-        <GameOver show={gameOver} restart={restart}></GameOver>
+        <GameOver show={gameOver} restart={restart} levelUp={levelUp}></GameOver>
       </GameProvider>
     </div>
 

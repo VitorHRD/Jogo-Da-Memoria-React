@@ -14,7 +14,7 @@ function GameProvider(props) {
     else {
       setEmoji(false)
     }
-  }, [])
+  },[])
 
   const [emoji, setEmoji] = useState(false)
 
