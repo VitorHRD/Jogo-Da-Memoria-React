@@ -108,6 +108,7 @@ body{
     border:none;
     border-radius: 10px;
     margin-top: 10px;
+    margin-left: 20px ;
 }
 #lvl:hover{
        cursor: pointer;
@@ -124,9 +125,17 @@ body{
 #gameBoard{
     max-width: 1000px;
     display: grid;
-    grid-template: 1fr 1fr 1fr 1fr  / 1fr 1fr 1fr 1fr 1fr   ;
     gap:20px;
     
+}
+.gameBoardLvl1{
+    grid-template: 1fr 1fr 1fr 1fr  / 1fr 1fr 1fr 1fr 1fr  ;
+}
+.gameBoardLvl2{
+    grid-template: 1fr 1fr 1fr 1fr  / 1fr 1fr 1fr 1fr 1fr 1fr  ;
+}
+.gameBoardLvl3{
+    grid-template: 1fr 1fr 1fr 1fr  / 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
 }
 .toggle {
     position: relative;

@@ -19,7 +19,7 @@ function GameProvider(props) {
   const [emoji, setEmoji] = useState(false)
 
   return (
-    <GameContext.Provider value={{ emoji: [emoji, setEmoji], }}>
+    <GameContext.Provider value={{ emoji: [emoji, setEmoji]}}>
       {props.children}
     </GameContext.Provider>
   )
