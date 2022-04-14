@@ -4,7 +4,7 @@ export default function GameOver(props) {
   return (props.show ?
     <div id="gameOver">
       <div>
-        {props.level !==  3 ? "Parabéns  , você completou o cu!" : "Parabéns , você completou o jogo!"  }
+        {props.level !==  3 ? "Parabéns  , você completou a fase!" : "Parabéns , você completou o jogo!"  }
       </div>
       <div>
         <button id="restart" onClick={()=>{props.restart()}}>Restart</button>
