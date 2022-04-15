@@ -13,16 +13,20 @@ export default function MemoryGame() {
 
   useEffect(() => {
     setCards(game.createCardsFromTechs())
+    cadsflipped();
 
   }, [])
+  useEffect(()=>{
+    cadsflipped();
+  },[level])
+  
+  
   function restart() {
     game.clearCards();
+    setLevel(1)
     game.lowerLvl();
     setCards(game.createCardsFromTechs())
     setgameOver(false)
-    setLevel(1)
-    
-
   }
   function levelUp(){
     game.uplvl();
@@ -32,6 +36,12 @@ export default function MemoryGame() {
     setgameOver(false)
     
   }
+  function cadsflipped(){
+    setTimeout(()=>{
+        game.cards.forEach(u => u.flipped =false)
+        setCards([...game.cards])
+    },2000)
+}
   function handleFlip(card) {
     game.flipCard(card.id, () => {
       //GameOverCallback
@@ -39,6 +49,7 @@ export default function MemoryGame() {
     }, () => {
       //NoMatchCallback
       setCards([...game.cards])
+
     })
     setCards([...game.cards])
   }

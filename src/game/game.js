@@ -54,6 +54,7 @@ let game = {
         this.secondCard.flipped = false;
         this.clearCards();
     },
+    
 
     checkGameOver() {
 
@@ -122,14 +123,15 @@ let game = {
         return [{
             id: this.createIdWithTech(tech),
             icon: tech,
-            flipped: false,
+            flipped: true,
         }, {
             id: this.createIdWithTech(tech),
             icon: tech,
-            flipped: false,
+            flipped: true,
         }]
 
     },
+ 
 
     createIdWithTech: function (tech) {
         return tech + parseInt(Math.random() * 1000);
